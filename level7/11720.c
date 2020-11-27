@@ -1,20 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int		main(void)
 {
 	int		i;
-	int		n;
-	int		rslt;
-	char	*arr;
+	int		time;
+	char	arr[15];
 
-	rslt = 0;
-	scanf("%d", &n);
-	arr = (char *)malloc(sizeof(char) * (n + 1));
+	time = 0;
 	scanf("%s", arr);
-	for (i = 0; i < n; i++)
-		rslt += arr[i] - 48;
-	free(arr);
-	printf("%d", rslt);
+	for (i = 0; arr[i]; i++)
+	{
+		if (arr[i] <= 'C')
+			time += 3;
+		else if (arr[i] <= 'F')
+			time += 4;
+		else if (arr[i] <= 'I')
+			time += 5;
+		else if (arr[i] <= 'L')
+			time += 6;
+		else if (arr[i] <= 'O')
+			time += 7;
+		else if (arr[i] <= 'S')
+			time += 8;
+		else if (arr[i] <= 'V')
+			time += 9;
+		else
+			time += 10;
+	}
+	printf ("%d", time);
 	return (0);
 }
