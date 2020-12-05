@@ -9,26 +9,6 @@ int		ft_sqrt(int nb)
 		return (0);
 	if (nb == 1)
 		return (1);
-	if (nb == 3)
-		return (2);
-	while (n * n <= (unsigned int)nb)
-	{
-		if (n * n == (unsigned int)nb)
-			return (n);
-		n++;
-	}
-	return (0);
-}
-
-int		ft_sqrt2(int nb)
-{
-	unsigned int	n;
-
-	n = 2;
-	if (nb < 1)
-		return (0);
-	if (nb == 1)
-		return (1);
 	while (n * n < (unsigned int)nb)
 		n++;
 	return (n);
@@ -38,16 +18,11 @@ int		checkNum(int d)
 {
 	int		num;
 
-	if (ft_sqrt(d))
-		return((2 * ft_sqrt(d)) - 1);
+	num = ft_sqrt(d) - 1;
+	if (d <= num * num + num)
+		return (2 * num);
 	else
-	{
-		num = ft_sqrt2(d) - 1;
-		if (d <= num * num + num)
-			return (2 * num);
-		else
-			return (2 * num + 1);
-	}
+		return (2 * num + 1);
 	return (1);
 }
 

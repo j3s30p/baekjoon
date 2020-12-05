@@ -22,4 +22,3 @@ int		main(void)
 	printf("%d", day);
 	return (0);
 }
-// while문 타임아웃 예제풀이
