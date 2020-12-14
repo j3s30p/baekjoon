@@ -37,6 +37,15 @@ void	makeStar(int n, char **arr, int a, int b, int c)
 		else
 			makeStar(n, arr, box / 3, 2 * (box / 3), box / 3);
 	}
+	else
+	{	//배열 출력
+		for (i = 0; i < n; i++)
+		{
+			for (k = 0; k < n; k++)
+				printf("%c", arr[i][k]);
+		printf("\n");
+		}
+	}
 }
 
 int		main(void)
@@ -55,15 +64,8 @@ int		main(void)
 		for (k = 0; k < n; k++)
 			arr[i][k] = '*';
 	}
-	//별찍기 배열 완성
+	//별찍기 배열 완성, 출력
 	makeStar(n, arr, n / 3, (n / 3) * 2, n / 3);
-	//배열 출력
-	for (i = 0; i < n; i++)
-	{
-		for (k = 0; k < n; k++)
-			printf("%c", arr[i][k]);
-		printf("\n");
-	}
 	//동적할당 풀어주기
 	for (i = 0; i < n; i++)
 		free(arr[i]);
